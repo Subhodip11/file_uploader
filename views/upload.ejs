@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image File Uploader</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    #upload-1,
+    #upload-2 {
+        margin: 0.5rem;
+        padding: 0.2rem 2rem;
+        outline: none;
+        border: none;
+        background-color: blue;
+        color: white;
+        position: relative;
+        left: 25%;
+    }
+    
+    .single {
+        position: absolute;
+        top: 35%;
+        left: 47%;
+        transform: translate(-35%, -47%);
+        /* border: 1px solid black; */
+    }
+    
+    .single,
+    .multiple {
+        /* border: 1px solid black; */
+        padding: 1rem 4rem;
+    }
+    
+    .multiple {
+        margin-top: 1rem;
+        position: absolute;
+        top: 60%;
+        left: 55%;
+        transform: translate(-60%, -55%);
+    }
+    
+    #fileSelect-1,
+    #fileSelect-2 {
+        margin: 1rem 0;
+        outline: none;
+        background: transparent;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="single">
+            <h1>Single File Upload</h1>
+            <form action="/uploadSingle" enctype="multipart/form-data" method="POST">
+                <input type="file" name="fileSelect" id="fileSelect-1">
+                <br>
+                <input type="submit" value="Upload" id="upload-1">
+            </form>
+        </div>
+        <div class="multiple">
+            <h1>Multiple File Upload</h1>
+            <form action="/uploadMultiple" enctype="multipart/form-data" method="POST">
+                <input type="file" name="multiple" id="fileSelect-2" multiple>
+                <br>
+                <input type="submit" value="Upload" id="upload-2">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
